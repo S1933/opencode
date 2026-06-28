@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@little_tale/opencode-with-claude": "latest",
+    "@opencode-ai/plugin": "1.14.33"
+  }
+}
