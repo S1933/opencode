@@ -1,114 +1,338 @@
-{
-  "$schema": "https://opencode.ai/config.json",
-  "model": "opencode-go/deepseek-v4-flash",
-  "provider": {
-    "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Ollama (local)",
-      "options": {
-        "baseURL": "http://localhost:11434/v1"
-      },
-      "models": {
-        "qwen3.5:9b": {
-          "name": "Qwen 3.5 9B (local)",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "qwen2.5-coder:0.5b": {
-          "name": "Qwen 2.5 Coder 0.5B (local)"
+    {
+    "$schema": "https://opencode.ai/config.json",
+    "model": "opencode-go/glm-5.2",
+    "small_model": "opencode-go/deepseek-v4-flash",
+    "default_agent": "plan",
+    "share": "disabled",
+    "lsp": true,
+    "compaction": {
+        "auto": true,
+        "prune": true,
+        "reserved": 10000
+    },
+    "watcher": {
+        "ignore": [
+        "node_modules/**",
+        "vendor/**",
+        "dist/**",
+        "build/**",
+        ".git/**",
+        ".idea/**",
+        ".vscode/**",
+        ".cache/**",
+        "coverage/**",
+        "var/cache/**",
+        "var/log/**",
+        "web/sites/*/files/**",
+        "public/build/**",
+        "public/assets/**"
+        ]
+    },
+    "permission": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "lsp": "allow",
+        "edit": "ask",
+        "external_directory": "deny",
+        "webfetch": "ask",
+        "websearch": "ask",
+        "bash": {
+        "*": "ask",
+        "pwd": "allow",
+        "ls*": "allow",
+        "find *": "allow",
+        "grep *": "allow",
+        "rg *": "allow",
+        "cat *": "allow",
+        "head *": "allow",
+        "tail *": "allow",
+        "git status*": "allow",
+        "git show-ref*": "allow",
+        "git branch*": "allow",
+        "git diff*": "allow",
+        "git log*": "allow",
+        "git ls-files*": "allow"
         }
-      }
     },
-    "with-claude": {
-      "npm": "@little_tale/opencode-with-claude",
-      "models": {
-        "haiku": {
-          "name": "WithClaude Haiku",
-          "attachment": false,
-          "limit": {
-            "context": 200000,
-            "output": 8192
-          },
-          "capabilities": {
-            "reasoning": false,
-            "toolcall": true
-          }
+    "provider": {
+        "with-claude": {
+        "npm": "@little_tale/opencode-with-claude",
+        "models": {
+            "haiku": {
+            "name": "WithClaude Haiku",
+            "attachment": false,
+            "limit": {
+                "context": 200000,
+                "output": 8192
+            },
+            "capabilities": {
+                "reasoning": false,
+                "toolcall": true
+            }
+            },
+            "sonnet": {
+            "name": "WithClaude Sonnet",
+            "attachment": false,
+            "limit": {
+                "context": 1000000,
+                "output": 16384
+            },
+            "capabilities": {
+                "reasoning": true,
+                "toolcall": true
+            }
+            },
+            "opus": {
+            "name": "WithClaude Opus",
+            "attachment": false,
+            "limit": {
+                "context": 1000000,
+                "output": 16384
+            },
+            "capabilities": {
+                "reasoning": true,
+                "toolcall": true
+            }
+            }
         },
-        "sonnet": {
-          "name": "WithClaude Sonnet",
-          "attachment": false,
-          "limit": {
-            "context": 1000000,
-            "output": 16384
-          },
-          "capabilities": {
-            "reasoning": true,
-            "toolcall": true
-          }
-        },
-        "opus": {
-          "name": "WithClaude Opus",
-          "attachment": false,
-          "limit": {
-            "context": 1000000,
-            "output": 16384
-          },
-          "capabilities": {
-            "reasoning": true,
-            "toolcall": true
-          }
+        "options": {
+            "cliPath": "claude",
+            "timeout": 600000,
+            "chunkTimeout": 30000
         }
-      },
-      "options": {
-        "cliPath": "claude"
-      }
+        }
+    },
+    "agent": {
+        "plan": {
+        "description": "Plan read-only avec GLM-5.2",
+        "mode": "primary",
+        "model": "opencode-go/glm-5.2",
+        "temperature": 0.1,
+        "steps": 12,
+        "prompt": "Analyze the request and produce a clear, execution-ready plan. Do not edit files. Do not implement code. Identify the files likely involved, the risks, the smallest safe implementation path, and the verification commands to run after implementation. If the task is ambiguous, make reasonable assumptions and state them clearly.",
+        "permission": {
+            "read": "allow",
+            "glob": "allow",
+            "grep": "allow",
+            "list": "allow",
+            "lsp": "allow",
+            "edit": "deny",
+            "external_directory": "deny",
+            "webfetch": "ask",
+            "websearch": "ask",
+            "bash": {
+            "*": "ask",
+            "pwd": "allow",
+            "ls*": "allow",
+            "find *": "allow",
+            "grep *": "allow",
+            "rg *": "allow",
+            "cat *": "allow",
+            "head *": "allow",
+            "tail *": "allow",
+            "git status*": "allow",
+            "git show-ref*": "allow",
+            "git branch*": "allow",
+            "git diff*": "allow",
+            "git log*": "allow",
+            "git ls-files*": "allow"
+            }
+        }
+        },
+        "build": {
+        "description": "Implementation rapide avec DeepSeek V4 Flash",
+        "mode": "primary",
+        "model": "opencode-go/deepseek-v4-flash",
+        "temperature": 0.2,
+        "steps": 24,
+        "prompt": "Implement the requested change with the smallest safe diff. Follow the existing code style and architecture. Do not perform unrelated refactoring. Prefer targeted changes over broad rewrites. After editing, run the most relevant verification commands or explain why they cannot be run. Show the final diff summary and any remaining risks.",
+        "permission": {
+            "read": "allow",
+            "glob": "allow",
+            "grep": "allow",
+            "list": "allow",
+            "lsp": "allow",
+            "edit": "ask",
+            "external_directory": "deny",
+            "webfetch": "ask",
+            "websearch": "ask",
+            "bash": {
+            "*": "ask",
+            "pwd": "allow",
+            "ls*": "allow",
+            "find *": "allow",
+            "grep *": "allow",
+            "rg *": "allow",
+            "cat *": "allow",
+            "head *": "allow",
+            "tail *": "allow",
+            "git status*": "allow",
+            "git show-ref*": "allow",
+            "git branch*": "allow",
+            "git diff*": "allow",
+            "git log*": "allow",
+            "git ls-files*": "allow"
+            }
+        }
+        },
+        "debug": {
+        "description": "Debug read-only avec Codex GPT-5.5",
+        "mode": "primary",
+        "model": "codex/gpt-5.5",
+        "temperature": 0.1,
+        "steps": 18,
+        "prompt": "Analyze the issue, reproduce it if possible, isolate the root cause, and propose a minimal targeted fix. Do not edit files. Do not perform refactoring. Identify the exact files, functions, commands, logs, and behaviors involved. Explain the cause, the expected solution, and the verification commands to run after implementation.",
+        "permission": {
+            "read": "allow",
+            "glob": "allow",
+            "grep": "allow",
+            "list": "allow",
+            "lsp": "allow",
+            "edit": "deny",
+            "external_directory": "deny",
+            "webfetch": "ask",
+            "websearch": "ask",
+            "bash": {
+            "*": "ask",
+            "pwd": "allow",
+            "ls*": "allow",
+            "find *": "allow",
+            "grep *": "allow",
+            "rg *": "allow",
+            "cat *": "allow",
+            "head *": "allow",
+            "tail *": "allow",
+            "git status*": "allow",
+            "git show-ref*": "allow",
+            "git branch*": "allow",
+            "git diff*": "allow",
+            "git log*": "allow",
+            "git ls-files*": "allow"
+            }
+        }
+        },
+        "planClaude": {
+        "description": "Claude planning assistant for workflow task plans",
+        "mode": "subagent",
+        "hidden": false,
+        "model": "with-claude/opus",
+        "temperature": 0.1,
+        "steps": 16,
+        "prompt": "You are **planClaude**, the Claude planning assistant for this workflow.\n\nYou are a planner. You are not an implementer and you are not a reviewer.\n\n## Selection rules\n\n- If the user already referenced a task ID, use that task.\n- If no task ID is given, call `list_tasks` first and choose the most relevant unfinished task.\n- If no suitable task exists, create one with `create_task` before drafting the plan.\n\n## Required workflow\n\n- For a new task: use `create_task` if needed, then use `run_claude_plan` to generate and save the plan.\n- For an existing task: use `get_task_context`, then use `run_claude_plan` to generate and save the revised plan.\n\n## Rules\n\n- Do not implement code in this mode.\n- Do not perform final review in this mode.\n- Keep plans structured, explicit, and execution-ready.\n- If critical unknowns remain, surface them clearly.",
+        "permission": {
+            "read": "allow",
+            "glob": "allow",
+            "grep": "allow",
+            "list": "allow",
+            "lsp": "allow",
+            "edit": "deny",
+            "external_directory": "deny",
+            "webfetch": "ask",
+            "websearch": "ask",
+            "task": "allow",
+            "create_task": "allow",
+            "list_tasks": "allow",
+            "get_task_context": "allow",
+            "run_claude_plan": "allow",
+            "reject_plan": "allow",
+            "bash": {
+            "*": "ask",
+            "pwd": "allow",
+            "ls*": "allow",
+            "find *": "allow",
+            "grep *": "allow",
+            "rg *": "allow",
+            "cat *": "allow",
+            "head *": "allow",
+            "tail *": "allow",
+            "git status*": "allow",
+            "git show-ref*": "allow",
+            "git branch*": "allow",
+            "git diff*": "allow",
+            "git log*": "allow",
+            "git ls-files*": "allow"
+            }
+        }
+        },
+        "reviewClaude": {
+        "description": "Review task implementation against the approved plan",
+        "mode": "subagent",
+        "hidden": false,
+        "model": "with-claude/opus",
+        "temperature": 0.1,
+        "steps": 16,
+        "prompt": "You are **reviewClaude**, the review assistant for this workflow.\n\nUse pragmatic minimalism: prefer the smallest correct verdict over exhaustive commentary.\n\n## Required workflow\n\n1. Use `get_task_context` to inspect the task.\n2. Use `get_approved_plan` to load the approved plan.\n3. Use `run_claude_review` to compare implementation results against the plan and record the verdict.\n\n## Rules\n\n- Do not create a new implementation.\n- Do not rewrite the plan.\n- If the task is not reviewable, stop and explain why.\n- Keep the review summary dense: gaps, risks, and verdict.",
+        "permission": {
+            "read": "allow",
+            "glob": "allow",
+            "grep": "allow",
+            "list": "allow",
+            "lsp": "allow",
+            "edit": "deny",
+            "external_directory": "deny",
+            "webfetch": "deny",
+            "websearch": "deny",
+            "task": "allow",
+            "get_task_context": "allow",
+            "get_approved_plan": "allow",
+            "run_claude_review": "allow",
+            "bash": {
+            "*": "ask",
+            "pwd": "allow",
+            "ls*": "allow",
+            "find *": "allow",
+            "grep *": "allow",
+            "rg *": "allow",
+            "cat *": "allow",
+            "head *": "allow",
+            "tail *": "allow",
+            "git status*": "allow",
+            "git show-ref*": "allow",
+            "git branch*": "allow",
+            "git diff*": "allow",
+            "git log*": "allow",
+            "git ls-files*": "allow"
+            }
+        }
+        },
+    "reviewCodex": {
+        "description": "Review code with Codex GPT-5.5",
+        "mode": "subagent",
+        "hidden": false,
+        "model": "codex/gpt-5.5",
+        "temperature": 0.1,
+        "steps": 16,
+        "prompt": "Start by determining the base branch: check if `develop` exists with `git show-ref --verify refs/heads/develop`, use it if it does, otherwise fall back to `main`. Then fetch the diff with `git diff <base>...HEAD`, or `git diff --cached` for staged changes. Review the changed code in detail: check correctness, security, performance, maintainability, tests, and readability. Do not edit files. Identify potential bugs, risks, and possible improvements. Produce a clear verdict: accepted, needs revision, or rejected — with a dense, actionable justification.",
+        "permission": {
+            "read": "allow",
+            "glob": "allow",
+            "grep": "allow",
+            "list": "allow",
+            "lsp": "allow",
+            "edit": "deny",
+            "external_directory": "deny",
+            "webfetch": "deny",
+            "websearch": "deny",
+            "bash": {
+            "*": "ask",
+            "pwd": "allow",
+            "ls*": "allow",
+            "find *": "allow",
+            "grep *": "allow",
+            "rg *": "allow",
+            "cat *": "allow",
+            "head *": "allow",
+            "tail *": "allow",
+            "git status*": "allow",
+            "git show-ref*": "allow",
+            "git branch*": "allow",
+            "git diff*": "allow",
+            "git log*": "allow",
+            "git ls-files*": "allow"
+            }
+        }
+        }
     }
-  },
-  "agent": {
-    "build": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "plan": {
-      "model": "opencode-go/glm-5.2"
-    },
-    "debug": {
-      "description": "Debug avec Codex GPT-5.5",
-      "model": "codex/gpt-5.5",
-      "prompt": "Analyse le problème, identifie la cause racine et propose un correctif minimal. Ne fais pas de refactoring non demandé."
-    },
-    "implClaude": {
-      "description": "Claude implementation executor for approved workflow tasks",
-      "mode": "subagent",
-      "hidden": false,
-      "model": "with-claude/sonnet",
-      "prompt": "Runtime-managed implClaude prompt. The installed package provides the latest bundled prompt content automatically.",
-      "tools": {}
-    },
-    "planClaude": {
-      "description": "Claude planning assistant for workflow task plans",
-      "mode": "subagent",
-      "hidden": false,
-      "model": "with-claude/opus",
-      "prompt": "Runtime-managed planClaude prompt. The installed package provides the latest bundled prompt content automatically.",
-      "tools": {}
-    },
-    "reviewClaude": {
-      "description": "Claude review assistant for implementation verification",
-      "mode": "subagent",
-      "hidden": false,
-      "model": "with-claude/sonnet",
-      "prompt": "Runtime-managed reviewClaude prompt. The installed package provides the latest bundled prompt content automatically.",
-      "tools": {}
-    },
-    "reviewOpus": {
-      "description": "Review avec Claude Opus",
-      "mode": "subagent",
-      "hidden": false,
-      "model": "with-claude/opus",
-      "prompt": "Runtime-managed reviewOpus prompt. Review le code en détail.",
-      "tools": {}
     }
-  }
-}
