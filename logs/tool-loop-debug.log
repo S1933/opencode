@@ -1,0 +1,1715 @@
+[2026-06-27T14:52:40.830Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 17,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.830Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 3,
+  "promptLength": 420,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- task: spawn a subagent\n  Parameters: {}\n\nWhen calling the task tool, set subagent_type to one of: general-purpose, codemachine. Do not omit this parameter.\n\nUSER: analyze this repo",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.831Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 11,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.831Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 293,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: read a file\n  Parameters: {}\n\nUSER: read a file",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.831Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 7,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.831Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 294,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- task: spawn a subagent\n  Parameters: {}\n\nUSER: analyze",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.831Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 5,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.831Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 287,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: read a file\n  Parameters: {}\n\nUSER: hello",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.839Z] buildPromptFromMessages: {
+  "totalMessages": 2,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "system",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 16,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 5,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.839Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 37,
+  "promptPreview": "SYSTEM: You are helpful.\n\nUSER: Hello",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.839Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "object",
+      "contentLen": "arr:2",
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.839Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 19,
+  "promptPreview": "USER: Part 1\nPart 2",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 12,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 349,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: Read a file\n  Parameters: {\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\"}}}\n\nUSER: Read foo.txt",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: {
+  "totalMessages": 3,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 13,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "read",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    },
+    {
+      "i": 2,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 18,
+      "toolCallId": "call_1"
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 1
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "call_1",
+      "toolCallNames": "read",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": [
+    {
+      "index": 0,
+      "toolCallId": "call_1",
+      "contentPreview": "file contents here"
+    }
+  ]
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 4,
+  "promptLength": 231,
+  "promptPreview": "USER: Read the file\n\nASSISTANT: tool_call(id: call_1, name: read, args: {\"path\":\"foo.txt\"})\n\nTOOL_RESULT (call_id: call_1): file contents here\n\nThe above tool calls have been executed. Continue your response based on these results.",
+  "hasToolResultFormat": true,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "read",
+      "contentType": "string",
+      "contentLen": 22,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "call_1",
+      "toolCallNames": "read",
+      "contentType": "string",
+      "contentPreview": "Let me read that file."
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 93,
+  "promptPreview": "ASSISTANT: Let me read that file.\ntool_call(id: call_1, name: read, args: {\"path\":\"foo.txt\"})",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "bash",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "call_1",
+      "toolCallNames": "bash",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 68,
+  "promptPreview": "ASSISTANT: tool_call(id: call_1, name: bash, args: {\"command\":\"ls\"})",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: {
+  "totalMessages": 5,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "system",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 21,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 12,
+      "toolCallId": null
+    },
+    {
+      "i": 2,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "read",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    },
+    {
+      "i": 3,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 11,
+      "toolCallId": "c1"
+    },
+    {
+      "i": 4,
+      "role": "assistant",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 30,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 1
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "c1",
+      "toolCallNames": "read",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": [
+    {
+      "index": 0,
+      "toolCallId": "c1",
+      "contentPreview": "hello world"
+    }
+  ]
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 7,
+  "promptLength": 565,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: Read a file\n  Parameters: {}\n\nSYSTEM: You are an assistant.\n\nUSER: Read foo.txt\n\nASSISTANT: tool_call(id: c1, name: read, args: {\"path\":\"foo.txt\"})\n\nTOOL_RESULT (call_id: c1): hello world\n\nASSISTANT: The file contains: hello world\n\nThe above tool calls h",
+  "hasToolResultFormat": true,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "object",
+      "contentLen": "arr:2",
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 11,
+  "promptPreview": "USER: Hello",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: {
+  "totalMessages": 0,
+  "totalTools": 0,
+  "messageSummary": [],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 0,
+  "promptLength": 0,
+  "promptPreview": "",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 2,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 8,
+  "promptPreview": "USER: Hi",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: {
+  "totalMessages": 3,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 13,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "read",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    },
+    {
+      "i": 2,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 18,
+      "toolCallId": "call_1"
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 1
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "call_1",
+      "toolCallNames": "read",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": [
+    {
+      "index": 0,
+      "toolCallId": "call_1",
+      "contentPreview": "file contents here"
+    }
+  ]
+}
+[2026-06-27T14:52:40.840Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 4,
+  "promptLength": 231,
+  "promptPreview": "USER: Read the file\n\nASSISTANT: tool_call(id: call_1, name: read, args: {\"path\":\"foo.txt\"})\n\nTOOL_RESULT (call_id: call_1): file contents here\n\nThe above tool calls have been executed. Continue your response based on these results.",
+  "hasToolResultFormat": true,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.841Z] buildPromptFromMessages: {
+  "totalMessages": 2,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 5,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "assistant",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 8,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:52:40.841Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 32,
+  "promptPreview": "USER: Hello\n\nASSISTANT: Hi there",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:52:40.841Z] buildPromptFromMessages: {
+  "totalMessages": 4,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 15,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "assistant",
+      "hasToolCalls": 2,
+      "tcNames": "read,read",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    },
+    {
+      "i": 2,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 13,
+      "toolCallId": "call_1"
+    },
+    {
+      "i": 3,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 13,
+      "toolCallId": "call_2"
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 2
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 2,
+      "toolCallIds": "call_1,call_2",
+      "toolCallNames": "read,read",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": [
+    {
+      "index": 0,
+      "toolCallId": "call_1",
+      "contentPreview": "contents of a"
+    },
+    {
+      "index": 1,
+      "toolCallId": "call_2",
+      "contentPreview": "contents of b"
+    }
+  ]
+}
+[2026-06-27T14:52:40.841Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 5,
+  "promptLength": 330,
+  "promptPreview": "USER: Read both files\n\nASSISTANT: tool_call(id: call_1, name: read, args: {\"path\":\"a.txt\"})\ntool_call(id: call_2, name: read, args: {\"path\":\"b.txt\"})\n\nTOOL_RESULT (call_id: call_1): contents of a\n\nTOOL_RESULT (call_id: call_2): contents of b\n\nThe above tool calls have been executed. Continue your response based on these results.",
+  "hasToolResultFormat": true,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:28.112Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 17,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:28.112Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 3,
+  "promptLength": 420,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- task: spawn a subagent\n  Parameters: {}\n\nWhen calling the task tool, set subagent_type to one of: general-purpose, codemachine. Do not omit this parameter.\n\nUSER: analyze this repo",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:28.112Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 11,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:28.112Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 293,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: read a file\n  Parameters: {}\n\nUSER: read a file",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:28.112Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 7,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:28.112Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 294,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- task: spawn a subagent\n  Parameters: {}\n\nUSER: analyze",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:28.112Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 5,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:28.112Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 287,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: read a file\n  Parameters: {}\n\nUSER: hello",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:31.995Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 12,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:31.995Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 369,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: Read a file\n  Parameters: {\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}\n\nUSER: Read foo.txt",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:32.247Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 12,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:32.247Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 369,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: Read a file\n  Parameters: {\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}\n\nUSER: Read foo.txt",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:32.271Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 18,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:32.271Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 392,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- todowrite: Create or update todos\n  Parameters: {\"type\":\"object\",\"properties\":{\"todos\":{\"type\":\"array\"}},\"required\":[\"todos\"]}\n\nUSER: Create a todo list",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:32.295Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 12,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:32.295Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 486,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- edit: Edit a file\n  Parameters: {\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\"},\"old_string\":{\"type\":\"string\"},\"new_string\":{\"type\":\"string\"}},\"required\":[\"path\",\"old_string\",\"new_string\"],\"additionalProperties\":false}\n\nUSER: Edit TODO.md",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:32.319Z] buildPromptFromMessages: {
+  "totalMessages": 3,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 12,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "read",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    },
+    {
+      "i": 2,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 32,
+      "toolCallId": "c1"
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 1
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "c1",
+      "toolCallNames": "read",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": [
+    {
+      "index": 0,
+      "toolCallId": "c1",
+      "contentPreview": "{\"content\":\"file contents here\"}"
+    }
+  ]
+}
+[2026-06-27T14:54:32.319Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 5,
+  "promptLength": 587,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: Read a file\n  Parameters: {\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}\n\nUSER: Read foo.txt\n\nASSISTANT: tool_call(id: c1, name: read, args: {\"path\":\"foo.txt\"})\n\nTOOL_RESULT (call_id: c1): {\"content\":\"file contents here\"}\n\n",
+  "hasToolResultFormat": true,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:32.342Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 9,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:32.342Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 15,
+  "promptPreview": "USER: Say hello",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:32.366Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 8,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:32.366Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 365,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: Read a file\n  Parameters: {\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}\n\nUSER: Run bash",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:32.389Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 12,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:32.389Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 18,
+  "promptPreview": "USER: Read foo.txt",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.877Z] buildPromptFromMessages: {
+  "totalMessages": 2,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "system",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 16,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 5,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:38.877Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 37,
+  "promptPreview": "SYSTEM: You are helpful.\n\nUSER: Hello",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "object",
+      "contentLen": "arr:2",
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 19,
+  "promptPreview": "USER: Part 1\nPart 2",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 12,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 349,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: Read a file\n  Parameters: {\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\"}}}\n\nUSER: Read foo.txt",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: {
+  "totalMessages": 3,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 13,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "read",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    },
+    {
+      "i": 2,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 18,
+      "toolCallId": "call_1"
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 1
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "call_1",
+      "toolCallNames": "read",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": [
+    {
+      "index": 0,
+      "toolCallId": "call_1",
+      "contentPreview": "file contents here"
+    }
+  ]
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 4,
+  "promptLength": 231,
+  "promptPreview": "USER: Read the file\n\nASSISTANT: tool_call(id: call_1, name: read, args: {\"path\":\"foo.txt\"})\n\nTOOL_RESULT (call_id: call_1): file contents here\n\nThe above tool calls have been executed. Continue your response based on these results.",
+  "hasToolResultFormat": true,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "read",
+      "contentType": "string",
+      "contentLen": 22,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "call_1",
+      "toolCallNames": "read",
+      "contentType": "string",
+      "contentPreview": "Let me read that file."
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 93,
+  "promptPreview": "ASSISTANT: Let me read that file.\ntool_call(id: call_1, name: read, args: {\"path\":\"foo.txt\"})",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "bash",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "call_1",
+      "toolCallNames": "bash",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 68,
+  "promptPreview": "ASSISTANT: tool_call(id: call_1, name: bash, args: {\"command\":\"ls\"})",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: {
+  "totalMessages": 5,
+  "totalTools": 1,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "system",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 21,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 12,
+      "toolCallId": null
+    },
+    {
+      "i": 2,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "read",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    },
+    {
+      "i": 3,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 11,
+      "toolCallId": "c1"
+    },
+    {
+      "i": 4,
+      "role": "assistant",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 30,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 1
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "c1",
+      "toolCallNames": "read",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": [
+    {
+      "index": 0,
+      "toolCallId": "c1",
+      "contentPreview": "hello world"
+    }
+  ]
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 7,
+  "promptLength": 565,
+  "promptPreview": "SYSTEM: You have access to the following tools. When you need to use one, respond with a tool_call in the standard OpenAI format.\nTool guidance: prefer write/edit for file changes; use bash mainly to run commands/tests.\n\nAvailable tools:\n- read: Read a file\n  Parameters: {}\n\nSYSTEM: You are an assistant.\n\nUSER: Read foo.txt\n\nASSISTANT: tool_call(id: c1, name: read, args: {\"path\":\"foo.txt\"})\n\nTOOL_RESULT (call_id: c1): hello world\n\nASSISTANT: The file contains: hello world\n\nThe above tool calls h",
+  "hasToolResultFormat": true,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "object",
+      "contentLen": "arr:2",
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 11,
+  "promptPreview": "USER: Hello",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: {
+  "totalMessages": 0,
+  "totalTools": 0,
+  "messageSummary": [],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:38.878Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 0,
+  "promptLength": 0,
+  "promptPreview": "",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.879Z] buildPromptFromMessages: {
+  "totalMessages": 1,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 2,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:38.879Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 1,
+  "promptLength": 8,
+  "promptPreview": "USER: Hi",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.879Z] buildPromptFromMessages: {
+  "totalMessages": 3,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 13,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "assistant",
+      "hasToolCalls": 1,
+      "tcNames": "read",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    },
+    {
+      "i": 2,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 18,
+      "toolCallId": "call_1"
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 1
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 1,
+      "toolCallIds": "call_1",
+      "toolCallNames": "read",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": [
+    {
+      "index": 0,
+      "toolCallId": "call_1",
+      "contentPreview": "file contents here"
+    }
+  ]
+}
+[2026-06-27T14:54:38.879Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 4,
+  "promptLength": 231,
+  "promptPreview": "USER: Read the file\n\nASSISTANT: tool_call(id: call_1, name: read, args: {\"path\":\"foo.txt\"})\n\nTOOL_RESULT (call_id: call_1): file contents here\n\nThe above tool calls have been executed. Continue your response based on these results.",
+  "hasToolResultFormat": true,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.879Z] buildPromptFromMessages: {
+  "totalMessages": 2,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 5,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "assistant",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 8,
+      "toolCallId": null
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 0,
+    "assistantEmpty": 0,
+    "toolResults": 0
+  },
+  "assistantDetails": [],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": []
+}
+[2026-06-27T14:54:38.879Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 2,
+  "promptLength": 32,
+  "promptPreview": "USER: Hello\n\nASSISTANT: Hi there",
+  "hasToolResultFormat": false,
+  "hasAssistantToolCallFormat": false,
+  "hasCompletionSignal": false
+}
+[2026-06-27T14:54:38.879Z] buildPromptFromMessages: {
+  "totalMessages": 4,
+  "totalTools": 0,
+  "messageSummary": [
+    {
+      "i": 0,
+      "role": "user",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 15,
+      "toolCallId": null
+    },
+    {
+      "i": 1,
+      "role": "assistant",
+      "hasToolCalls": 2,
+      "tcNames": "read,read",
+      "contentType": "object",
+      "contentLen": "null",
+      "toolCallId": null
+    },
+    {
+      "i": 2,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 13,
+      "toolCallId": "call_1"
+    },
+    {
+      "i": 3,
+      "role": "tool",
+      "hasToolCalls": 0,
+      "tcNames": "",
+      "contentType": "string",
+      "contentLen": 13,
+      "toolCallId": "call_2"
+    }
+  ],
+  "stats": {
+    "assistantWithToolCalls": 1,
+    "assistantEmpty": 0,
+    "toolResults": 2
+  },
+  "assistantDetails": [
+    {
+      "index": 0,
+      "toolCallCount": 2,
+      "toolCallIds": "call_1,call_2",
+      "toolCallNames": "read,read",
+      "contentType": "object",
+      "contentPreview": "object"
+    }
+  ],
+  "emptyAssistantDetails": [],
+  "toolResultDetails": [
+    {
+      "index": 0,
+      "toolCallId": "call_1",
+      "contentPreview": "contents of a"
+    },
+    {
+      "index": 1,
+      "toolCallId": "call_2",
+      "contentPreview": "contents of b"
+    }
+  ]
+}
+[2026-06-27T14:54:38.879Z] buildPromptFromMessages: final prompt: {
+  "lineCount": 5,
+  "promptLength": 330,
+  "promptPreview": "USER: Read both files\n\nASSISTANT: tool_call(id: call_1, name: read, args: {\"path\":\"a.txt\"})\ntool_call(id: call_2, name: read, args: {\"path\":\"b.txt\"})\n\nTOOL_RESULT (call_id: call_1): contents of a\n\nTOOL_RESULT (call_id: call_2): contents of b\n\nThe above tool calls have been executed. Continue your response based on these results.",
+  "hasToolResultFormat": true,
+  "hasAssistantToolCallFormat": true,
+  "hasCompletionSignal": false
+}

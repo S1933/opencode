@@ -1,0 +1,114 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode-go/deepseek-v4-flash",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3.5:9b": {
+          "name": "Qwen 3.5 9B (local)",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "qwen2.5-coder:0.5b": {
+          "name": "Qwen 2.5 Coder 0.5B (local)"
+        }
+      }
+    },
+    "with-claude": {
+      "npm": "@little_tale/opencode-with-claude",
+      "models": {
+        "haiku": {
+          "name": "WithClaude Haiku",
+          "attachment": false,
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "capabilities": {
+            "reasoning": false,
+            "toolcall": true
+          }
+        },
+        "sonnet": {
+          "name": "WithClaude Sonnet",
+          "attachment": false,
+          "limit": {
+            "context": 1000000,
+            "output": 16384
+          },
+          "capabilities": {
+            "reasoning": true,
+            "toolcall": true
+          }
+        },
+        "opus": {
+          "name": "WithClaude Opus",
+          "attachment": false,
+          "limit": {
+            "context": 1000000,
+            "output": 16384
+          },
+          "capabilities": {
+            "reasoning": true,
+            "toolcall": true
+          }
+        }
+      },
+      "options": {
+        "cliPath": "claude"
+      }
+    }
+  },
+  "agent": {
+    "build": {
+      "model": "opencode-go/deepseek-v4-flash"
+    },
+    "plan": {
+      "model": "opencode-go/glm-5.2"
+    },
+    "debug": {
+      "description": "Debug avec Codex GPT-5.5",
+      "model": "codex/gpt-5.5",
+      "prompt": "Analyse le problème, identifie la cause racine et propose un correctif minimal. Ne fais pas de refactoring non demandé."
+    },
+    "implClaude": {
+      "description": "Claude implementation executor for approved workflow tasks",
+      "mode": "subagent",
+      "hidden": false,
+      "model": "with-claude/sonnet",
+      "prompt": "Runtime-managed implClaude prompt. The installed package provides the latest bundled prompt content automatically.",
+      "tools": {}
+    },
+    "planClaude": {
+      "description": "Claude planning assistant for workflow task plans",
+      "mode": "subagent",
+      "hidden": false,
+      "model": "with-claude/opus",
+      "prompt": "Runtime-managed planClaude prompt. The installed package provides the latest bundled prompt content automatically.",
+      "tools": {}
+    },
+    "reviewClaude": {
+      "description": "Claude review assistant for implementation verification",
+      "mode": "subagent",
+      "hidden": false,
+      "model": "with-claude/sonnet",
+      "prompt": "Runtime-managed reviewClaude prompt. The installed package provides the latest bundled prompt content automatically.",
+      "tools": {}
+    },
+    "reviewOpus": {
+      "description": "Review avec Claude Opus",
+      "mode": "subagent",
+      "hidden": false,
+      "model": "with-claude/opus",
+      "prompt": "Runtime-managed reviewOpus prompt. Review le code en détail.",
+      "tools": {}
+    }
+  }
+}
