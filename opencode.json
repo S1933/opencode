@@ -53,7 +53,16 @@
         "git branch*": "allow",
         "git diff*": "allow",
         "git log*": "allow",
-        "git ls-files*": "allow"
+        "git ls-files*": "allow",
+        "cat *.env*": "deny",
+        "cat .env*": "deny",
+        "cat **/.env*": "deny",
+        "head *.env*": "deny",
+        "head .env*": "deny",
+        "tail *.env*": "deny",
+        "tail .env*": "deny",
+        "grep * .env*": "deny",
+        "rg * .env*": "deny"
         }
     },
     "provider": {
@@ -137,11 +146,19 @@
             "git branch*": "allow",
             "git diff*": "allow",
             "git log*": "allow",
-            "git ls-files*": "allow"
-            }
+          "git ls-files*": "allow",
+          "cat *.env*": "deny",
+          "cat .env*": "deny",
+          "head *.env*": "deny",
+          "head .env*": "deny",
+          "tail *.env*": "deny",
+          "tail .env*": "deny",
+          "grep * .env*": "deny",
+          "rg * .env*": "deny"
         }
-        },
-        "build": {
+      }
+    },
+    "build": {
         "description": "Implementation rapide avec DeepSeek V4 Flash",
         "mode": "primary",
         "model": "opencode-go/deepseek-v4-flash",
@@ -173,14 +190,22 @@
             "git branch*": "allow",
             "git diff*": "allow",
             "git log*": "allow",
-            "git ls-files*": "allow"
-            }
+          "git ls-files*": "allow",
+          "cat *.env*": "deny",
+          "cat .env*": "deny",
+          "head *.env*": "deny",
+          "head .env*": "deny",
+          "tail *.env*": "deny",
+          "tail .env*": "deny",
+          "grep * .env*": "deny",
+          "rg * .env*": "deny"
         }
-        },
-        "debug": {
+      }
+    },
+    "debug": {
         "description": "Debug read-only avec Codex GPT-5.5",
         "mode": "primary",
-        "model": "codex/gpt-5.5",
+        "model": "openai/gpt-5.5",
         "temperature": 0.1,
         "steps": 18,
         "prompt": "Analyze the issue, reproduce it if possible, isolate the root cause, and propose a minimal targeted fix. Do not edit files. Do not perform refactoring. Identify the exact files, functions, commands, logs, and behaviors involved. Explain the cause, the expected solution, and the verification commands to run after implementation.",
@@ -209,11 +234,19 @@
             "git branch*": "allow",
             "git diff*": "allow",
             "git log*": "allow",
-            "git ls-files*": "allow"
-            }
+          "git ls-files*": "allow",
+          "cat *.env*": "deny",
+          "cat .env*": "deny",
+          "head *.env*": "deny",
+          "head .env*": "deny",
+          "tail *.env*": "deny",
+          "tail .env*": "deny",
+          "grep * .env*": "deny",
+          "rg * .env*": "deny"
         }
-        },
-        "planClaude": {
+      }
+    },
+    "planClaude": {
         "description": "Claude planning assistant for workflow task plans",
         "mode": "subagent",
         "hidden": false,
@@ -252,11 +285,19 @@
             "git branch*": "allow",
             "git diff*": "allow",
             "git log*": "allow",
-            "git ls-files*": "allow"
-            }
+          "git ls-files*": "allow",
+          "cat *.env*": "deny",
+          "cat .env*": "deny",
+          "head *.env*": "deny",
+          "head .env*": "deny",
+          "tail *.env*": "deny",
+          "tail .env*": "deny",
+          "grep * .env*": "deny",
+          "rg * .env*": "deny"
         }
-        },
-        "reviewClaude": {
+      }
+    },
+    "reviewClaude": {
         "description": "Review task implementation against the approved plan",
         "mode": "subagent",
         "hidden": false,
@@ -293,18 +334,26 @@
             "git branch*": "allow",
             "git diff*": "allow",
             "git log*": "allow",
-            "git ls-files*": "allow"
-            }
+          "git ls-files*": "allow",
+          "cat *.env*": "deny",
+          "cat .env*": "deny",
+          "head *.env*": "deny",
+          "head .env*": "deny",
+          "tail *.env*": "deny",
+          "tail .env*": "deny",
+          "grep * .env*": "deny",
+          "rg * .env*": "deny"
         }
-        },
+      }
+    },
     "reviewCodex": {
         "description": "Review code with Codex GPT-5.5",
         "mode": "subagent",
         "hidden": false,
-        "model": "codex/gpt-5.5",
+        "model": "openai/gpt-5.5",
         "temperature": 0.1,
         "steps": 16,
-        "prompt": "Start by determining the base branch: check if `develop` exists with `git show-ref --verify refs/heads/develop`, use it if it does, otherwise fall back to `main`. Then fetch the diff with `git diff <base>...HEAD`, or `git diff --cached` for staged changes. Review the changed code in detail: check correctness, security, performance, maintainability, tests, and readability. Do not edit files. Identify potential bugs, risks, and possible improvements. Produce a clear verdict: accepted, needs revision, or rejected — with a dense, actionable justification.",
+        "prompt": "Start by determining the base branch. Check in this order:\n1. `refs/heads/develop` (git show-ref --verify refs/heads/develop)\n2. `refs/remotes/origin/develop` (git show-ref --verify refs/remotes/origin/develop)\n3. `refs/heads/main` (git show-ref --verify refs/heads/main)\n4. `refs/remotes/origin/main` (git show-ref --verify refs/remotes/origin/main)\nUse the first one that exists. Then fetch the diff with `git diff <base>...HEAD`, or `git diff --cached` for staged changes. Also check `git merge-base <base> HEAD` to confirm the fork point. Review the changed code in detail: check correctness, security, performance, maintainability, tests, and readability. Do not edit files. Identify potential bugs, risks, and possible improvements. Produce a clear verdict: accepted, needs revision, or rejected — with a dense, actionable justification.",
         "permission": {
             "read": "allow",
             "glob": "allow",
@@ -330,9 +379,20 @@
             "git branch*": "allow",
             "git diff*": "allow",
             "git log*": "allow",
-            "git ls-files*": "allow"
-            }
+            "git ls-files*": "allow",
+            "git rev-parse*": "allow",
+            "git merge-base*": "allow",
+            "git show --stat*": "allow",
+            "cat *.env*": "deny",
+            "cat .env*": "deny",
+            "head *.env*": "deny",
+            "head .env*": "deny",
+            "tail *.env*": "deny",
+            "tail .env*": "deny",
+            "grep * .env*": "deny",
+            "rg * .env*": "deny"
         }
-        }
+      }
     }
-    }
+  }
+}
