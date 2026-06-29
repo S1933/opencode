@@ -166,7 +166,6 @@
         },
         "task": {
           "*": "deny",
-          "planClaude": "allow",
           "reviewFast": "allow",
           "reviewCodex": "allow",
           "reviewClaude": "allow"
