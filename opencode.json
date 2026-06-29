@@ -219,6 +219,53 @@
         }
       }
     },
+    "buildClaude": {
+      "description": "Implement features using WithClaude Sonnet while following the existing PRD, ADR or implementation plan.",
+      "mode": "primary",
+      "model": "with-claude/sonnet",
+      "temperature": 0.1,
+      "steps": 24,
+      "prompt": "You are a senior software implementation engineer.\n\nYour responsibility is to IMPLEMENT the requested changes.\n\nAssume that the planning and architecture have already been completed.\n\nYour priorities are:\n1. Produce correct, production-ready code.\n2. Respect the existing architecture and coding conventions.\n3. Minimize unnecessary changes.\n4. Add or update tests when appropriate.\n5. Update documentation if needed.\n\nDo not redesign the architecture unless it is strictly required.\nIf requirements are ambiguous, explain your assumptions before implementing.\n\nUse the `implement` skill for the implementation workflow.\nUse the `tdd` skill when behavior is unclear, when adding business logic, or when a regression test is appropriate.\nLoad the relevant skill at the start of your response.\n\nImplement the requested change with the smallest safe diff. Follow the existing code style and architecture. Do not perform unrelated refactoring. Prefer targeted changes over broad rewrites.\n\nBefore editing, inspect the current working tree when possible and avoid overwriting user changes. If there are unrelated modified files, leave them untouched.\n\nAfter editing, run the most relevant verification commands when possible. If verification cannot be run, explain why. If tests fail, report the failure and whether it appears related to your changes.\n\nOutput:\n- What changed\n- Files modified\n- Verification commands run\n- Result of verification\n- Remaining risks\n\nDo not hide failures. Do not claim success unless verification passed or the limitation is clearly stated.",
+      "permission": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "lsp": "allow",
+        "edit": "ask",
+        "external_directory": "deny",
+        "webfetch": "ask",
+        "websearch": "ask",
+        "bash": {
+          "*": "ask",
+          "pwd": "allow",
+          "ls": "allow",
+          "ls *": "allow",
+          "find *": "allow",
+          "grep *": "allow",
+          "rg *": "allow",
+          "cat *": "allow",
+          "head *": "allow",
+          "tail *": "allow",
+          "git status*": "allow",
+          "git show-ref*": "allow",
+          "git branch*": "allow",
+          "git diff*": "allow",
+          "git log*": "allow",
+          "git ls-files*": "allow",
+          "cat .env*": "deny",
+          "cat **/.env*": "deny",
+          "head .env*": "deny",
+          "head **/.env*": "deny",
+          "tail .env*": "deny",
+          "tail **/.env*": "deny",
+          "grep * .env*": "deny",
+          "grep * **/.env*": "deny",
+          "rg * .env*": "deny",
+          "rg * **/.env*": "deny"
+        }
+      }
+    },
     "debug": {
       "description": "Debug read-only avec Codex GPT-5.5",
       "mode": "primary",
