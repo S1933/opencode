@@ -236,12 +236,6 @@
         "external_directory": "deny",
         "webfetch": "ask",
         "websearch": "ask",
-        "task": {
-          "*": "deny",
-          "reviewFast": "allow",
-          "reviewCodex": "allow",
-          "reviewClaude": "allow"
-        },
         "list_tasks": "allow",
         "get_task_context": "allow",
         "get_approved_plan": "allow",
