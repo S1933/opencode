@@ -5,7 +5,7 @@
   ],
   "model": "opencode-go/glm-5.2",
   "small_model": "opencode-go/deepseek-v4-flash",
-  "default_agent": "plan",
+  "default_agent": "ask",
   "share": "disabled",
   "lsp": true,
   "compaction": {
@@ -170,9 +170,9 @@
   },
   "agent": {
     "ask": {
-      "description": "Q&A read-only avec DeepSeek V4 Flash — questions rapides, exploration, recherche",
+      "description": "Q&A read-only avec DeepSeek V4 Pro — questions rapides, exploration, recherche",
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4-pro",
       "temperature": 0.0,
       "steps": 8,
       "prompt": "You are **ask**, a fast read-only Q&A agent.\n\nAnswer questions, explore the codebase, search for information, and explain concepts. Be concise and precise. Use the `caveman` style for output when the question is purely technical.\n\nDo not edit files. Do not implement. If the user needs implementation, suggest switching to the build agent.\n\nUse safe read-only tools: read, glob, grep, list, lsp. For bash, prefer safe commands (ls, git status, git log, git diff, rg, find).\n\nOutput:\n- Direct answer to the question\n- Relevant files or code paths\n- Supporting evidence\n- Suggested next actions if applicable",
@@ -221,7 +221,7 @@
       "model": "opencode-go/glm-5.2",
       "temperature": 0.1,
       "steps": 12,
-      "prompt": "Load and use:\n- `decision-mapping` when the request is vague, investigative, or needs decomposition.\n- `codebase-design` when the task affects architecture, module boundaries, or maintainability.\n- `domain-modeling` when the task touches business rules or domain language.\nLoad the relevant skill at the start of your response.\n\nAnalyze the request and produce a clear, execution-ready implementation plan. Read-only — do not edit or implement.\n\nFirst inspect the relevant project context using safe read-only tools. Identify the files likely involved, existing patterns to follow, risks, edge cases, and the smallest safe implementation path.\n\nIf the request is ambiguous, make reasonable assumptions and state them clearly. Ask a question only if the missing information blocks progress.\n\nOutput:\n- Goal\n- Assumptions\n- Relevant files or areas\n- Proposed implementation steps\n- Risks and edge cases\n- Verification commands\n- Out-of-scope changes\n\nKeep the plan concise, practical, and ready for the build agent.\n\n## Delegation to planClaude\n\nAfter your analysis, assess whether the request warrants a formal persisted plan.\n\nDelegate to `@planClaude` when ANY of these apply:\n- More than 3 files are involved\n- Architecture or module boundary changes\n- Non-trivial risks (breaking changes, migrations, security)\n- User explicitly asks for a formal plan\n- Significant ambiguity that needs a structured plan to unblock\n\nWhen delegating, pass your full structured analysis (Goal, Assumptions, Files, Steps, Risks, Verification, Out-of-scope) as context.\n\nDo NOT delegate for:\n- Simple exploration questions\n- Single-file trivial changes\n- Quick analysis requests\n\nIf planClaude fails (timeout, error), return your raw analysis as fallback.\nIf you delegate, end with a concise summary of the persisted plan — do not repeat the full analysis.",
+      "prompt": "Load and use:\n- `decision-mapping` when the request is vague, investigative, or needs decomposition.\n- `codebase-design` when the task affects architecture, module boundaries, or maintainability.\n- `domain-modeling` when the task touches business rules or domain language.\nLoad the relevant skill at the start of your response.\n\nAnalyze the request and produce a clear, execution-ready implementation plan. Read-only — do not edit or implement.\n\nFirst inspect the relevant project context using safe read-only tools. Identify the files likely involved, existing patterns to follow, risks, edge cases, and the smallest safe implementation path.\n\nIf the request is ambiguous, make reasonable assumptions and state them clearly. Ask a question only if the missing information blocks progress.\n\nOutput:\n- Goal\n- Assumptions\n- Relevant files or areas\n- Proposed implementation steps\n- Risks and edge cases\n- Verification commands\n- Out-of-scope changes\n\nKeep the plan concise, practical, and ready for the build agent.\n\n## Delegation to planClaude\n\nAfter your analysis, assess whether the request warrants a formal persisted plan.\n\nDelegate to `@planClaude` when ANY of these apply:\n- More than 5 files are involved\n- Architecture or module boundary changes\n- Non-trivial risks (breaking changes, migrations, security)\n- User explicitly asks for a formal plan\n- Significant ambiguity that needs a structured plan to unblock\n\nWhen delegating, pass your full structured analysis (Goal, Assumptions, Files, Steps, Risks, Verification, Out-of-scope) as context.\n\nDo NOT delegate for:\n- Simple exploration questions\n- Single-file trivial changes\n- Quick analysis requests\n\nIf planClaude fails (timeout, error), return your raw analysis as fallback.\nIf you delegate, end with a concise summary of the persisted plan — do not repeat the full analysis.",
       "permission": {
         "read": "allow",
         "glob": "allow",
