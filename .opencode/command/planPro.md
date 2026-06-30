@@ -1,8 +1,8 @@
-# planClaude
+# planPro
 
 Use Claude as a planning assistant inside OpenCode for the current task.
 
-Delegate this request to `@planClaude`. Do not write the plan yourself in the current agent.
+Delegate this request to `@planPro`. Do not write the plan yourself in the current agent.
 
 You are planning only. Do not implement or review in this mode.
 
@@ -18,7 +18,7 @@ This tool-backed save path is the default behavior, not an optional extra.
 
 ## Required behavior
 
-- Hand off to `@planClaude` instead of responding directly in the current primary agent.
+- Hand off to `@planPro` instead of responding directly in the current primary agent.
 - Read task context first.
 - Produce a concrete implementation plan for the current request via Claude CLI.
 - Keep the plan structured and actionable.

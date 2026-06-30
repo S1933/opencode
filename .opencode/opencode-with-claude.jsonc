@@ -6,5 +6,5 @@
   // "claudeCli": { "defaultModel": "opus" }
   //
   // To override a single role only:
-  // "claudeCli": { "roles": { "planClaude": { "model": "opus" } } }
+  // "claudeCli": { "roles": { "planPro": { "model": "opus" } } }
 }
