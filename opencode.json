@@ -836,56 +836,48 @@
     "reviewers": {
       "description": "Run GLM, Codex and Claude reviews, then consolidate the verdict",
       "agent": "orchestrator",
-      "model": "opencode-go/glm-5.2",
       "subtask": false,
       "template": "Run reviewOpenCode, reviewCodex, and reviewClaude on the current diff. Do not edit files.\n\nCollect from each: verdict, blocking findings, non-blocking findings, missing verification, confidence.\n\nIf a reviewer fails to run, note it and continue.\n\nConsolidate into: global verdict | verdict matrix | blocking issues | non-blocking improvements | reviewer disagreements | missing verification | next actions.\n\nAfter consolidation, for each blocking issue, delegate to @plan with this exact message: \"Create a remediation task for this blocking review finding. Title: '[severity] <short summary> | file=<file>'. Body: Full finding details — issue, why it matters, and suggested fix.\". Use review-fixation mode. Do NOT generate a plan."
     },
     "audit": {
       "description": "Run architecture audit — analysis, tech debt, quality, improvement opportunities",
       "agent": "orchestrator",
-      "model": "opencode-go/glm-5.2",
       "subtask": false,
       "template": "Delegate to @architect for an architecture and maintainability analysis. Do not implement code. Consolidate the results into: key findings | severity | effort | recommended next actions | whether a plan should be created."
     },
     "bugfix": {
       "description": "Debug -> plan workflow for bugs",
       "agent": "orchestrator",
-      "model": "opencode-go/glm-5.2",
       "subtask": false,
       "template": "Orchestrate a bugfix workflow. Delegate first to @debug to reproduce and confirm the root cause. If the root cause is confirmed, delegate to @plan with the debug handoff. Do not implement unless the user explicitly asks."
     },
     "feature": {
       "description": "Product -> architect -> plan workflow for features",
       "agent": "orchestrator",
-      "model": "opencode-go/glm-5.2",
       "subtask": false,
       "template": "Orchestrate a feature workflow. If the request is vague, delegate to @product. If architecture or module boundaries are involved, delegate to @architect. Then delegate to @plan. Do not implement."
     },
     "refactor": {
       "description": "Refactor workflow — architecture audit, plan, build recommendation, then reviewers",
       "agent": "orchestrator",
-      "model": "opencode-go/glm-5.2",
       "subtask": false,
       "template": "Run the refactor workflow: delegate to @architect for architecture analysis, then @plan to create a refactor plan, recommend @build, and finally @reviewOpenCode, @reviewCodex, and @reviewClaude. Do not edit files. Consolidate results at each step."
     },
     "ship": {
       "description": "Review -> docs -> git readiness workflow",
       "agent": "orchestrator",
-      "model": "opencode-go/glm-5.2",
       "subtask": false,
       "template": "Orchestrate shipping readiness. Run @reviewOpenCode, @reviewCodex, and @reviewClaude. If there are no blocking issues, delegate to @docs for the PR description, then delegate to @git for safe final git commands. Do not push."
     },
     "hotfix": {
       "description": "Hotfix workflow — fast debug, plan, build, lightweight review",
       "agent": "orchestrator",
-      "model": "opencode-go/glm-5.2",
       "subtask": false,
       "template": "Run the hotfix workflow: delegate to @debug to confirm root cause, then @plan for a minimal fix plan, recommend @build, and then @reviewOpenCode only unless the change is risky (in which case also run @reviewCodex and @reviewClaude). Do not edit files. Consolidate results."
     },
     "pr": {
       "description": "Generate a Pull Request description from the current diff",
       "agent": "orchestrator",
-      "model": "opencode-go/glm-5.2",
       "subtask": true,
       "template": "Delegate to @docs to generate a production-ready Pull Request description from the current git status, current branch, recent commits, staged and unstaged diff. Do not modify files. Consolidate the result and recommend the next action."
     }
