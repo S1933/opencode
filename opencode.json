@@ -887,7 +887,7 @@
       "agent": "orchestrator",
       "model": "opencode-go/glm-5.2",
       "subtask": true,
-      "template": "Analyze the current git status, current branch, recent commits, staged and unstaged diff, then generate a production-ready Pull Request description. Do not modify files. Include: title, summary, what changed, why, how to test, risks, rollback notes if relevant, documentation impact, reviewer checklist, suggested labels, and PR size estimate."
+      "template": "Delegate to @docs to generate a production-ready Pull Request description from the current git status, current branch, recent commits, staged and unstaged diff. Do not modify files. Consolidate the result and recommend the next action."
     }
   }
 }
