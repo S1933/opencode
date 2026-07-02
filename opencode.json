@@ -53,7 +53,6 @@
     "list": "allow",
     "lsp": "allow",
     "edit": "ask",
-    "external_directory": "deny",
     "webfetch": "ask",
     "websearch": "ask",
     "bash": {
@@ -166,35 +165,10 @@
         "list": "allow",
         "lsp": "allow",
         "edit": "deny",
-        "external_directory": "deny",
         "webfetch": "ask",
         "websearch": "ask",
         "bash": {
-          "*": "ask",
-          "pwd": "allow",
-          "ls": "allow",
-          "ls *": "allow",
-          "find *": "allow",
-          "grep *": "allow",
-          "rg *": "allow",
-          "git status*": "allow",
-          "git show-ref*": "allow",
-          "git branch*": "allow",
-          "git diff*": "allow",
-          "git log*": "allow",
-          "git ls-files*": "allow",
-          "cat .env*": "deny",
-          "cat **/.env*": "deny",
-          "rg * .env*": "deny",
-          "rg * **/.env*": "deny",
-          "cat *.pem": "deny",
-          "cat **/*.pem": "deny",
-          "cat *.key": "deny",
-          "cat **/*.key": "deny",
-          "cat credentials*": "deny",
-          "cat **/credentials*": "deny",
-          "cat secrets*": "deny",
-          "cat **/secrets*": "deny"
+          "*": "ask"
         },
         "task": {
           "*": "deny",
@@ -233,7 +207,6 @@
         "list": "allow",
         "lsp": "allow",
         "edit": "ask",
-        "external_directory": "deny",
         "webfetch": "ask",
         "websearch": "ask",
         "task": {
@@ -271,7 +244,6 @@
         "list": "allow",
         "lsp": "allow",
         "edit": "ask",
-        "external_directory": "deny",
         "webfetch": "ask",
         "websearch": "ask"
       }
@@ -306,7 +278,6 @@
         "list": "allow",
         "lsp": "allow",
         "edit": "deny",
-        "external_directory": "deny",
         "webfetch": "ask",
         "websearch": "ask",
         "task": {
@@ -348,7 +319,6 @@
         "list": "allow",
         "lsp": "allow",
         "edit": "deny",
-        "external_directory": "deny",
         "webfetch": "deny",
         "websearch": "deny",
         "task": {
@@ -438,7 +408,6 @@
         "list": "allow",
         "lsp": "allow",
         "edit": "deny",
-        "external_directory": "deny",
         "webfetch": "deny",
         "websearch": "deny",
         "bash": {
@@ -689,7 +658,6 @@
         "list": "allow",
         "lsp": "allow",
         "edit": "ask",
-        "external_directory": "deny",
         "webfetch": "deny",
         "websearch": "deny",
         "bash": {
@@ -797,7 +765,6 @@
         "list": "allow",
         "lsp": "allow",
         "edit": "deny",
-        "external_directory": "deny",
         "webfetch": "deny",
         "websearch": "deny",
         "bash": {
@@ -881,6 +848,17 @@
           "rg * **/secrets*": "deny"
         }
       }
+    }
+  },
+  "mcp": {
+    "specs": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/jp/Projects/specifications"
+      ]
     }
   }
 }
