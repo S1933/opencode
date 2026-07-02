@@ -876,8 +876,8 @@
     },
     "pr": {
       "description": "Generate a Pull Request description from the current diff",
-      "agent": "docs",
-      "model": "opencode-go/deepseek-v4-flash",
+      "agent": "orchestrator",
+      "model": "opencode-go/glm-5.2",
       "subtask": true,
       "template": "Analyze the current git status, current branch, recent commits, staged and unstaged diff, then generate a production-ready Pull Request description. Do not modify files. Include: title, summary, what changed, why, how to test, risks, rollback notes if relevant, documentation impact, reviewer checklist, suggested labels, and PR size estimate."
     }
