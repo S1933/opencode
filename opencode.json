@@ -691,7 +691,7 @@
     },
     "product": {
       "description": "Product/spec agent for Q&A, PRD creation, and ADR detection",
-      "mode": "primary",
+      "mode": "all",
       "model": "with-claude/opus",
       "temperature": 0.2,
       "steps": 20,
