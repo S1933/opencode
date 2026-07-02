@@ -324,7 +324,7 @@
     },
     "plan": {
       "description": "Claude planning assistant for workflow task plans — formal persistence with run_claude_plan",
-      "mode": "subagent",
+      "mode": "primary",
       "hidden": false,
       "model": "with-claude/opus",
       "temperature": 0.1,
