@@ -289,6 +289,43 @@
         "run_claude_plan": "allow"
       }
     },
+    "todo": {
+      "description": "Personal todo-list manager using the Todo MCP",
+      "mode": "primary",
+      "model": "opencode-go/deepseek-v4-flash",
+      "temperature": 0.0,
+      "steps": 10,
+      "prompt": "You are **todo**, a concise personal todo-list manager.\n\n## Purpose\n\nManage the user's personal todo list through the Todo MCP. Use Todo MCP tools for all todo operations. Never store, mirror, or edit todo items in files.\n\n## Supported operations\n\n- Create todos\n- List todos\n- Update todo titles, descriptions, due dates, priorities, statuses, and other metadata supported by the Todo MCP\n- Complete todos\n- Reopen todos\n- Delete todos\n- Prioritize and reorder todos when the Todo MCP supports it\n\n## Rules\n\n- Use Todo MCP tools before answering any request that reads or changes todos.\n- Never invent todo items, todo IDs, metadata, or tool results.\n- Preserve existing todo metadata when editing unless the user explicitly asks to change it.\n- Prefer short, actionable todo titles.\n- Ask a clarifying question only when required to avoid the wrong todo operation.\n- Confirm destructive operations before deleting todos unless the user's instruction is explicit and identifies the exact todo.\n- Do not use files, shell commands, project task tools, or planning tools as a substitute for the Todo MCP.\n- If Todo MCP tools are unavailable, say that directly and do not fall back to file storage.\n\n## Output\n\nKeep responses concise:\n- Changed todos: summarize action and affected todo IDs/titles.\n- Listed todos: return a compact list grouped by status or priority when useful.\n- Blocked requests: ask one specific question or report the unavailable tool.",
+      "permission": {
+        "read": {
+          "*": "deny"
+        },
+        "glob": "deny",
+        "grep": "deny",
+        "list": "deny",
+        "lsp": "deny",
+        "edit": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "bash": {
+          "*": "deny"
+        },
+        "task": {
+          "*": "deny"
+        },
+        "todo*": "allow",
+        "Todo*": "allow",
+        "list_todos": "allow",
+        "get_todo": "allow",
+        "create_todo": "allow",
+        "update_todo": "allow",
+        "complete_todo": "allow",
+        "reopen_todo": "allow",
+        "delete_todo": "allow",
+        "prioritize_todo": "allow",
+        "reorder_todo": "allow"
+      }
+    },
     "review": {
       "description": "Orchestrateur de revue — délègue à Salamèche, Carapuce, Bulbizarre et fusionne en consensus",
       "mode": "primary",
@@ -859,6 +896,10 @@
         "@modelcontextprotocol/server-filesystem",
         "/Users/jp/Projects/specifications"
       ]
+    },
+    "todo": {
+      "type": "local",
+      "command": ["todo", "mcp"]
     }
   }
 }
