@@ -5,7 +5,8 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(gh api *)",
       "Bash(rtk ls *)",
-      "Bash(rtk read *)"
+      "Bash(rtk read *)",
+      "Bash(opencode run *)"
     ]
   }
 }
