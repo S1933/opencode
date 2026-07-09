@@ -28,6 +28,52 @@ After editing, run the most relevant verification commands when possible (build,
 
 When verification fails and the root cause is not obvious after a quick look, do not guess at a fix — recommend a `@debug` detour for root-cause diagnosis, then implement the fix from that diagnosis.
 
+## Verification Commands
+
+PHP tests and coding standards checks run on the remote dev server via zsh aliases/functions. They MUST be invoked through `zsh -ic '<command>'` to load the interactive shell config — direct invocation will fail.
+
+### PHPUnit (TDD: red/green cycle)
+
+```bash
+# Run a specific test file
+zsh -ic 'phpunit web/modules/custom/{module}/tests/src/Unit/ExampleTest.php'
+
+# Run a specific test method
+zsh -ic 'phpunit --filter=testMethodName web/modules/custom/{module}'
+
+# Run all tests in a module
+zsh -ic 'phpunit web/modules/custom/{module}'
+
+# Run a test suite
+zsh -ic 'phpunit --testsuite=ocms-unit-kernel'
+```
+
+Paths are relative to `www/` (e.g. `web/modules/custom/...`). The function sets `SIMPLETEST_DB` and `cd`s to the project root automatically.
+
+### PHPCS (coding standards)
+
+```bash
+# Check a single file
+zsh -ic 'phpcs /home/jnuel/sshfs/ocms/www/web/modules/custom/{module}/src/ExampleService.php'
+
+# Check a directory
+zsh -ic 'phpcs /home/jnuel/sshfs/ocms/www/web/modules/custom/{module}/src'
+```
+
+Paths must be full remote paths (`/home/jnuel/sshfs/ocms/www/...`). The alias uses `--standard=Drupal,DrupalPractice`.
+
+### TDD workflow
+
+1. Write or update the test — run `phpunit` (expect red).
+2. Implement the minimal fix — run `phpunit` (expect green).
+3. Run `phpcs` on every modified PHP file before claiming success.
+
+### Notes
+
+- `zsh -ic` may print gitstatus warnings on stderr — cosmetic, ignore them.
+- `phpcbf` and `phpstan` are NOT available in this environment. Do not attempt to run them.
+- If the SSH connection to `gw2sdev-docker.ovh.net` fails, report it as a verification blocker — do not claim success without running tests.
+
 ## Output
 
 - What changed

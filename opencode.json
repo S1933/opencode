@@ -131,9 +131,9 @@
   },
   "agent": {
     "ask": {
-      "description": "Q&A read-only avec DeepSeek V4 Pro — questions rapides, exploration, recherche. Redirige vers docs/plan/build.",
+      "description": "Q&A read-only avec DeepSeek V4 Pro \u2014 questions rapides, exploration, recherche. Redirige vers commandes custom/plan/build.",
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-pro",
+      "model": "opencode-go/minimax-m3",
       "temperature": 0.0,
       "steps": 8,
       "prompt": "{file:./prompts/ask.md}",
@@ -145,16 +145,21 @@
         "edit": "deny",
         "webfetch": "ask",
         "websearch": "ask",
+        "bash": {
+          "jira*": "allow"
+        },
         "task": {
           "*": "deny",
           "build": "allow",
           "plan": "allow",
-          "docs": "allow"
+          "debug": "allow",
+          "review": "allow",
+          "git": "allow"
         }
       }
     },
     "build": {
-      "description": "Default fast builder — plus petit diff sûr, vérification systématique, détour debug si la vérif échoue",
+      "description": "Default fast builder \u2014 plus petit diff s\u00fbr, v\u00e9rification syst\u00e9matique, d\u00e9tour debug si la v\u00e9rif \u00e9choue",
       "mode": "primary",
       "model": "opencode-go/deepseek-v4-pro",
       "temperature": 0.2,
@@ -168,13 +173,17 @@
         "edit": "ask",
         "webfetch": "ask",
         "websearch": "ask",
+        "bash": {
+          "zsh -ic *phpunit*": "allow",
+          "zsh -ic *phpcs*": "allow"
+        },
         "task": {
           "*": "deny"
         }
       }
     },
     "debug": {
-      "description": "Bug diagnosis with MiniMax-M3 — reproduction autonome, cause racine, handoff vers plan",
+      "description": "Bug diagnosis with MiniMax-M3 \u2014 reproduction autonome, cause racine, handoff vers plan",
       "mode": "primary",
       "model": "opencode-go/minimax-m3",
       "temperature": 0.1,
@@ -194,7 +203,7 @@
       }
     },
     "plan": {
-      "description": "Default fast planner — plans exécutables, ancrés dans le code et les PRD/ADR",
+      "description": "Default fast planner \u2014 plans ex\u00e9cutables, ancr\u00e9s dans le code et les PRD/ADR",
       "mode": "primary",
       "model": "opencode-go/glm-5.2",
       "temperature": 0.1,
@@ -214,9 +223,9 @@
       }
     },
     "review": {
-      "description": "Orchestrateur de revue — délègue à Salamèche, Carapuce, Bulbizarre et fusionne en consensus",
+      "description": "Orchestrateur de revue \u2014 d\u00e9l\u00e8gue \u00e0 Salam\u00e8che, Carapuce, Bulbizarre et fusionne en consensus",
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-pro",
+      "model": "opencode-go/minimax-m3",
       "temperature": 0.0,
       "steps": 12,
       "prompt": "{file:./prompts/review.md}",
@@ -230,7 +239,7 @@
         "websearch": "deny",
         "task": {
           "*": "deny",
-          "Salamèche": "allow",
+          "Salam\u00e8che": "allow",
           "Carapuce": "allow",
           "Bulbizarre": "allow",
           "plan": "allow",
@@ -238,7 +247,32 @@
         }
       }
     },
-    "Salamèche": {
+    "orchestrator": {
+      "description": "Orchestrateur de livraison \u2014 plan \u2192 build \u2192 verify \u2192 review \u2192 pr-describe \u2192 git",
+      "mode": "primary",
+      "model": "opencode-go/glm-5.2",
+      "temperature": 0.0,
+      "steps": 40,
+      "prompt": "{file:./prompts/orchestrator.md}",
+      "permission": {
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "lsp": "allow",
+        "edit": "deny",
+        "webfetch": "ask",
+        "websearch": "ask",
+        "task": {
+          "*": "deny",
+          "plan": "allow",
+          "build": "allow",
+          "debug": "allow",
+          "review": "allow",
+          "git": "allow"
+        }
+      }
+    },
+    "Salam\u00e8che": {
       "description": "Deep reviewer focused on correctness and edge cases.",
       "mode": "subagent",
       "hidden": false,
@@ -333,53 +367,14 @@
           "git push*": "ask"
         }
       }
-    },
-    "docs": {
-      "description": "Agent d'écriture — PRD, ADR, issues, documentation, README, PR descriptions depuis le diff courant",
-      "mode": "all",
-      "hidden": false,
-      "model": "opencode-go/glm-5.2",
-      "temperature": 0.2,
-      "steps": 24,
-      "prompt": "{file:./prompts/docs.md}",
-      "permission": {
-        "glob": "allow",
-        "grep": "allow",
-        "list": "allow",
-        "lsp": "allow",
-        "edit": "ask",
-        "webfetch": "deny",
-        "websearch": "deny",
-        "task": {
-          "*": "deny"
-        }
-      }
-    },
+    }
+  },
+  "command": {
     "orchestrator": {
-      "description": "Orchestrateur de livraison — plan → build → verify → review → docs → git, boucle de correction avec cap à 3 itérations",
-      "mode": "primary",
-      "model": "opencode-go/glm-5.2",
-      "temperature": 0.1,
-      "steps": 60,
-      "prompt": "{file:./prompts/orchestrator.md}",
-      "permission": {
-        "glob": "allow",
-        "grep": "allow",
-        "list": "allow",
-        "lsp": "allow",
-        "edit": "deny",
-        "webfetch": "deny",
-        "websearch": "deny",
-        "task": {
-          "*": "deny",
-          "plan": "allow",
-          "build": "allow",
-          "debug": "allow",
-          "review": "allow",
-          "docs": "allow",
-          "git": "allow"
-        }
-      }
+      "template": "{file:./prompts/orchestrator.md}",
+      "description": "Orchestrateur de livraison \u2014 plan \u2192 build \u2192 verify \u2192 review \u2192 pr-describe \u2192 git, boucle de correction avec cap \u00e0 3 it\u00e9rations",
+      "agent": "orchestrator",
+      "model": "opencode-go/glm-5.2"
     }
   }
 }
