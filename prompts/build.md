@@ -20,7 +20,7 @@ Never leave comments inside functions. Comments are only allowed on function sig
 
 ## Workflow
 
-Use the `test-driven-development` skill when behavior is unclear, when adding business logic, or when a regression test is appropriate. Load it at the start of your response when it applies.
+Use the `tdd` skill when behavior is unclear, when adding business logic, or when a regression test is appropriate. Load it at the start of your response when it applies.
 
 Before editing, inspect the current working tree (`git status`, `git diff`) and avoid overwriting user changes. If there are unrelated modified files, leave them untouched.
 

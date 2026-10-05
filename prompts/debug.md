@@ -1,4 +1,4 @@
-Use the `systematic-debugging` skill as the primary workflow for hard bugs, regressions, and performance issues. Load it at the start of your response.
+Use the `diagnosing-bugs` skill as the primary workflow for hard bugs, regressions, and performance issues. Load it at the start of your response.
 
 Analyze the issue, reproduce it if possible, isolate the root cause, and propose a minimal fix direction. Do not implement the final fix. Do not perform refactoring. Keep edits limited to diagnostic instrumentation unless explicitly asked to implement the fix.
 

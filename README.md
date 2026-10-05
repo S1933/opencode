@@ -40,12 +40,12 @@ ask ──► /to-prd ──► plan ──► build ──► review ──► 
 | `ask` | primary (défaut) | `deepseek-v4-pro` | Q&A read-only, exploration. Redirige vers commandes custom / `@plan` / `@build`. |
 | `plan` | primary | `glm-5.2` | Plans exécutables ancrés PRD/code. Mode « review fixation » pour les findings bloquants. Protocole `BLOCKED:`. |
 | `build` | primary | `deepseek-v4-pro` | Implémentation, plus petit diff sûr, pas de refactoring opportuniste. Skill TDD. Protocole `BLOCKED:`. |
-| `debug` | primary | `minimax-m3` | Diagnostic (skill `systematic-debugging`). Reproduction autonome préférée ; boucle de preuves utilisateur en fallback. Handoff vers `@plan`. |
+| `debug` | primary | `minimax-m3` | Diagnostic (skill `diagnosing-bugs`). Reproduction autonome préférée ; boucle de preuves utilisateur en fallback. Handoff vers `@plan`. |
 | `review` | primary | `deepseek-v4-pro` | Orchestrateur de revue — ne review pas lui-même. Mode « verdict + findings only » quand appelé par `orchestrator`. |
 | `Salamèche` | subagent | `kimi-k2.7-code` | Revue approfondie : correction, edge cases, sécurité. |
 | `Carapuce` | subagent | `glm-5.2` | Revue équilibrée : maintenabilité, régressions. |
 | `Bulbizarre` | subagent | `minimax-m3` | Revue rapide : régressions, blockers. |
-| `git` | primary | `deepseek-v4-pro` | Assistant Git safe (skill `resolving-merge-conflicts`, gate review avant push). |
+| `git` | primary | `deepseek-v4-pro` | Assistant Git safe (gate review avant push). |
 | `orchestrator` | primary | `glm-5.2` | Orchestrateur de livraison (`/orchestrator`). Délègue tout, ne code rien, tranche via les évaluateurs. |
 
 Modèles globaux : `glm-5.2` (défaut), `deepseek-v4-flash` (small model). Agent par défaut : `ask`.
@@ -69,7 +69,7 @@ Les reviewers déterminent la branche de base automatiquement (`develop` → `or
 
 ## Skills
 
-Les prompts référencent les skills partagées de `~/.agents/skills` (exposées via le plugin `opencode-with-claude`) : `test-driven-development`, `systematic-debugging`, `resolving-merge-conflicts`, `verification-before-completion`.
+Les prompts référencent les skills partagées de `~/.agents/skills` (exposées via le plugin `opencode-with-claude`) : `diagnosing-bugs`, `tdd`.
 
 ## Permissions
 
