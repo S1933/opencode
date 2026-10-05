@@ -1,5 +1,5 @@
 ---
-description: Chaîne complète plan → build → verify → review → pr-describe → git, pilotée par objectif vérifiable
+description: Chaîne complète plan → build → verify → review → pr → git, pilotée par objectif vérifiable
 agent: orchestrator
 ---
 Livre la feature suivante en suivant ton workflow complet, sans sauter d'étape : $ARGUMENTS

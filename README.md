@@ -5,7 +5,7 @@ Configuration multi-agents pour [opencode](https://opencode.ai), alignée sur la
 ## Workflow nominal (nouvelle feature)
 
 ```
-ask ──► /to-prd ──► plan ──► build ──► review ──► /pr-describe ──► git
+ask ──► /to-prd ──► plan ──► build ──► review ──► /pr ──► git
                                   ▲          │
                                   └──────────┘
                         (corrections auto si review KO)
@@ -13,21 +13,21 @@ ask ──► /to-prd ──► plan ──► build ──► review ──► 
 /orchestrator = la chaîne complète orchestrée automatiquement
 ```
 
-1. **`ask`** — échange exploratoire read-only pour cadrer. Redirige dès que la demande dépasse la conversation : livrable écrit → commande dédiée (`/to-prd`, `/to-adr`, `/issue-draft`, `/write-doc`, `/pr-describe`), découpage → `@plan`, code → `@build`.
+1. **`ask`** — échange exploratoire read-only pour cadrer. Redirige dès que la demande dépasse la conversation : livrable écrit → commande dédiée (`/to-prd`, `/to-adr`, `/issue-draft`, `/write-doc`, `/pr`), découpage → `@plan`, code → `@build`.
 2. **`/to-prd`** — transforme l'idée discutée en **PRD** structuré, ancré dans le code réel, écrit dans `docs/prd/<slug>.md`.
 3. **`plan`** — lit le PRD/ADR comme source de vérité et produit un plan d'implémentation exécutable.
 4. **`build`** — implémente le plan avec le plus petit diff sûr. Si la vérification échoue de façon non évidente : détour `@debug` recommandé plutôt qu'un fix au jugé.
 5. **`review`** — revue du diff par consensus (voir ci-dessous). Boucle de correction câblée via `plan` + `build`.
-6. **`/pr-describe`** — PR description, notes de test, risques, checklist.
+6. **`/pr`** — description de PR (skill `pr`), en français, enregistrée dans `~/.agents/reports/`.
 7. **`git`** — commit et push. Gate de sécurité : pas de préparation de push sans verdict de review `accepted` (sauf changements triviaux). Toutes les commandes destructives ou de publication demandent confirmation.
 
 ## Commandes
 
 | Commande | Agent | Rôle |
 |---|---|---|
-| `/orchestrator <feature>` | `orchestrator` | Chaîne complète plan → build → verify → review → `/pr-describe` → git. Critères de sortie : (A) vérifications du projet toutes vertes (comptage dur) et (B) verdict review `accepted`. Cap à 3 itérations build ↔ (verify + review) ; détour `debug` si une vérif échoue de façon non évidente. Jamais auto-validé par build. |
+| `/orchestrator <feature>` | `orchestrator` | Chaîne complète plan → build → verify → review → `/pr` → git. Critères de sortie : (A) vérifications du projet toutes vertes (comptage dur) et (B) verdict review `accepted`. Cap à 3 itérations build ↔ (verify + review) ; détour `debug` si une vérif échoue de façon non évidente. Jamais auto-validé par build. |
 | `/to-prd <idée>` | `build` | Génération d'un PRD structuré. |
-| `/pr-describe` | `build` | Description de PR depuis le diff courant. |
+| `/pr` | `build` | Description de PR depuis le diff committé, en français (skill `pr`). |
 | `/to-adr <décision>` | `build` | ADR depuis une décision technique. |
 | `/write-doc <demande>` | `build` | Documentation ciblée basée sur le code réel. |
 | `/issue-draft <contexte>` | `ask` | Brouillon d'issue prêt à coller. |
@@ -69,7 +69,7 @@ Les reviewers déterminent la branche de base automatiquement (`develop` → `or
 
 ## Skills
 
-Les prompts référencent les skills partagées de `~/.agents/skills` (exposées via le plugin `opencode-with-claude`) : `caveman`, `test-driven-development`, `systematic-debugging`, `resolving-merge-conflicts`, `verification-before-completion`.
+Les prompts référencent les skills partagées de `~/.agents/skills` (exposées via le plugin `opencode-with-claude`) : `test-driven-development`, `systematic-debugging`, `resolving-merge-conflicts`, `verification-before-completion`.
 
 ## Permissions
 
